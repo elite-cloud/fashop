@@ -1,5 +1,6 @@
 <?php
 namespace EasySwoole\EasySwoole;
+use App\Process\HotReload;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
@@ -20,6 +21,11 @@ class EasySwooleEvent implements Event
 	{
 		define( 'PROJECT_PATH', __DIR__.DIRECTORY_SEPARATOR );
 		define( 'APP_PATH', __DIR__.DIRECTORY_SEPARATOR.'App' );
+
+		if (Core::getInstance()->isDev()) {
+            $swooleServer = ServerManager::getInstance()->getSwooleServer();
+            $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
+        }
 		\ezswoole\Core::register();
 		/**
 		 * **************** websocket控制器 **********************

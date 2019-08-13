@@ -1,0 +1,3 @@
+[submodule "Packages/ezswoole"]
+	path = Packages/ezswoole
+	url = https://github.com/elite-cloud/ezswoole.git

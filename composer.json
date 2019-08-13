@@ -11,28 +11,20 @@
     "repositories": {
         "packagist": {
             "type": "composer",
-            "url": "https://packagist.laravel-china.org"
-        },
-        "easyswoole/mysqli":{
-            "type": "vcs",
-            "url": "https://github.com/hanwenbo/mysqli"
+            "url": "https://mirrors.aliyun.com/composer/"
         },
         "hanwenbo/ezswoole":{
-            "type": "vcs",
-            "url": "https://github.com/hanwenbo/ezswoole"
-        },
-        "easyswoole/pay":{
-            "type": "vcs",
-            "url": "https://github.com/hanwenbo/pay"
+            "type": "path",
+            "url": "./Packages/hanwenbo-ezswoole"
         },
         "jpush/jpush":{
             "type": "vcs",
-            "url": "https://github.com/hanwenbo/jpush-api-php-client"
+            "url": "https://github.com/elite-cloud/jpush-api-php-client"
         }
     },
     "require": {
         "php": "^7.2",
-        "hanwenbo/ezswoole": "v3.x-dev",
+        "easyswoole/easyswoole": "^3",
         "easyswoole/wechat": "dev-master",
         "easyswoole/pay": "dev-master",
         "firebase/php-jwt": "^5.0",
@@ -45,7 +37,7 @@
         "hanwenbo/policy": "^1.0",
         "hanwenbo/reflect": "^1.0",
         "aliyuncs/oss-sdk-php": "^2.3",
-        "easyswoole/mysqli": "dev-master as 1",
+        "easyswoole/mysqli": "~1",
         "jpush/jpush": "*",
         "easyswoole/socket": "^1.1"
     },
